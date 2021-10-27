@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two way Data binding</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="assets/img/brslogo.png" alt="" />
+    </div>
+    <div id="app">
+      <h1>Two way data binding</h1>
+      <label for="">Name</label>
+      <input type="text" v-model="name" />
+      <br />
+      <label for="">Course</label>
+      <input type="text" v-model="course" />
+      <!-- Dispalying data -->
+      <div>
+        <p>Name : {{ name }}</p>
+        <p>Course:{{ course }}</p>
+      </div>
+    </div>
+    <script>
+      const BindApp = {
+        data() {
+          return {
+            name: 'Krishna',
+            course: '',
+          }
+        },
+      }
+      Vue.createApp(BindApp).mount('#app')
+    </script>
+  </body>
+</html>

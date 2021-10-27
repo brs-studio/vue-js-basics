@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data binding</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- https://www.nyros.com/brs/ -->
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="assets/img/brslogo.png" alt="" />
+    </div>
+    <div id="app">
+      <h1>Data Binding</h1>
+      <a v-bind:href="website" target="new">Brs with Nryos</a>
+      <p v-html="websiteTag"></p>
+
+      <input type="text" v-bind:value="name" />
+    </div>
+    <script>
+      const BindApp = {
+        data() {
+          return {
+            name: 'Brs With  Nyros',
+            website: 'https://www.nyros.com/brs/',
+            websiteTag: '<a href="https://www.nyros.com/brs/">BRS Link</a>',
+          }
+        },
+      }
+      Vue.createApp(BindApp).mount('#app')
+    </script>
+  </body>
+</html>
