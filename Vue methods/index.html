@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Methods</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="assets/img/brslogo.png" alt="" />
+    </div>
+    <div id="app">
+      <h1>Vue Methods</h1>
+      <button class="btn btn-primary" @click="increment">Increment</button>
+      <br />
+      <span>Count: {{ count }} </span>
+    </div>
+    <script>
+      //Vue Instance
+      const Counter = {
+        data() {
+          return {
+            count: 0,
+          }
+        },
+        methods: {
+          increment() {
+            this.count++
+          },
+        },
+      }
+      Vue.createApp(Counter).mount('#app')
+    </script>
+  </body>
+</html>
