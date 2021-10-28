@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Events</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div>
+    <img class="logo" src="assets/images/brslogo.png" alt="" />
+  </div>
+  <div id="app">
+    <div>
+      <img src="assets/images/shirts.png" class="shirt" alt="">
+    </div>
+    <div class="cart">
+      <h1>Mens'Shirt</h1>
+      <p>Cart({{ cart }})</p>
+      <button class="btn btn-primary mt-5" v-on:click.once="addToCart">Add To Cart</button>
+      <br>
+      <button class="btn" @click.once="removeFromCart">Remove From Cart</button>
+    </div>
+  </div>
+  <script>
+    //Vue instance
+    const Events = {
+      data() {
+        return {
+          cart: 0
+        }
+      },
+      methods: {
+        addToCart() {
+          this.cart++
+
+        },
+        removeFromCart() {
+          this.cart--
+
+        }
+      }
+    }
+    Vue.createApp(Events).mount('#app')
+  </script>
+</body>
+
+</html>

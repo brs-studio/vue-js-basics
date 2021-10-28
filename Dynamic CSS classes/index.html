@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic CSS classes</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div>
+    <img class="logo" src="assets/images/brslogo.png" alt="" />
+  </div>
+  <div id="app">
+    <h1 v-bind:class="{status:status}">Dynamic CSS Classes</h1>
+    <button class="btn btn-primary" v-on:click="status=!status">Click Here</button>
+  </div>
+  <script>
+    const Event = {
+      data() {
+        return {
+          status: false
+        }
+      }
+    }
+    Vue.createApp(Event).mount("#app")
+  </script>
+</body>
+
+</html>

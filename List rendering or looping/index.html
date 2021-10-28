@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List rendering</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div>
+    <img class="logo" src="assets/images/brslogo.png" alt="" />
+  </div>
+  <div class="heading">
+    <h1>List rendering</h1>
+  </div>
+
+  <div id="app">
+    <!-- Categories renedering -->
+    <div class="categories">
+      <h4>Categories</h4>
+      <div v-for="category in categories">
+        <ul>
+          <li>{{ category }}</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Products rendering -->
+    <div v-for="product in products">
+      <div>
+        <img v-bind:src="product.image" class="shirt" alt="">
+      </div>
+      <div class="cart">
+        <h2>{{ product.name }}</h2>
+        <p>Price: {{ product.price }}</p>
+        <button class="btn btn-primary mt-5">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    //Vue instance
+    const List = {
+      data() {
+        return {
+          categories: ['Mens', 'Womens', 'Kids'],
+          products: [{
+              name: "Zodiac Shirt",
+              price: "25$",
+              image: "assets/images/shirt1.jpg"
+            },
+            {
+              name: "Parx Shirts",
+              price: "30$",
+              image: "assets/images/shirt2.jpg"
+            }
+          ]
+        }
+      }
+    }
+    Vue.createApp(List).mount("#app")
+  </script>
+</body>
+
+</html>

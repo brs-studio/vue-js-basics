@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeyBoard Events</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div>
+    <img class="logo" src="assets/images/brslogo.png" alt="" />
+  </div>
+  <div id="app">
+    <h1>Keyboard Events</h1>
+    <input type="text" placeholder="Enter Name" v-on:keyup="keypressed">
+  </div>
+  <script>
+    const Events = {
+      methods: {
+        keypressed() {
+          console.log("Key pressed")
+        }
+      }
+    }
+    Vue.createApp(Events).mount("#app")
+  </script>
+</body>
+
+</html>

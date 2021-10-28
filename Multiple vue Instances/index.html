@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiplpe Vue instances</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div>
+    <img class="logo" src="assets/images/brslogo.png" alt="" />
+  </div>
+  <div id="app">
+    <h1>Multiple Vue Instances</h1>
+
+    <div id="app1">
+      <p>First Vue instance data: {{ name }}</p>
+      <p>{{ greet() }}</p>
+    </div>
+    <div id="app2">
+      <p>Second Vue instance data: {{ name }}</p>
+      <p>{{ greet() }}</p>
+
+    </div>
+  </div>
+  <script>
+    //FIrst vue instance
+    const First = {
+      data() {
+        return {
+          name: 'Brs with Nyros'
+        }
+      },
+      methods: {
+        greet() {
+          return "Hello from first vue instance"
+        }
+      }
+    }
+    Vue.createApp(First).mount('#app1')
+
+
+    // 2nd vue instance
+    const Second = {
+      data() {
+        return {
+          name: 'Vue Course'
+        }
+      },
+      methods: {
+        greet() {
+          return "Hello from second vue instance"
+        }
+      }
+    }
+    Vue.createApp(Second).mount('#app2')
+  </script>
+
+</html>

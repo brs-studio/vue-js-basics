@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Components</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="assets/images/brslogo.png" alt="" />
+    </div>
+    <div id="app">
+      <mycomponent></mycomponent>
+      <mycomponent></mycomponent>
+      <mycomponent></mycomponent>
+    </div>
+    <script>
+      const App= {
+        data() {
+          return{};
+        }
+      };
+      const app = Vue.createApp(App);
+      app.component("mycomponent",{
+        template: `<h1>This is my first vue component</h1>
+        <p>{{ message }}</p>`,
+        data() {
+          return {
+            message: "Brs with Nyros"
+          }
+        }
+      });
+      app.mount("#app")
+    </script>
+  </body>
+</html>

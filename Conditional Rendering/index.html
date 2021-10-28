@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional rendering</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="assets/images/brslogo.png" alt="" />
+    </div>
+    <!-- Id which connects with vue -->
+    <div id="app">
+        <h1 class="heading">Conditional rendering</h1><br>
+        <div class="bulb">
+          <h2 v-if="status">
+            <img src="assets/images/bulboff.jpg" alt="" class="image">
+          </h2>
+          <h2 v-else-if="!status">
+            <img src="assets/images/bulbon.jpg" alt="" class="image">
+          </h2>
+          <br>
+          <div class="cart">
+            <button class="btn btn-primary" v-on:click="status=!status">Swithc on/off</button>
+          </div>
+        </div>
+    </div>
+    <script>
+      // Vue instance
+      const Events = {
+        data() {
+          return {
+            status: true
+          }
+        }
+      }
+      //Mounting the instance with id app
+      Vue.createApp(Events).mount("#app")
+    </script>
+  </body>
+</html>
