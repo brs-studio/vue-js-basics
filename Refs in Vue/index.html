@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referencing in vue</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="assets/images/brslogo.png" alt="" />
+
+    </div>
+    <div id="app">
+      <h1>Referencing with $refs</h1>
+      <div class="content">
+        <div>
+      <img src="assets/images/Sport_balls.svg.png" alt="" class="image">
+    </div>
+    <div>
+      <input type="text" placeholder="Enter your Favourite Sport" ref="input">
+      <button class="btn btn-primary" v-on:click="readRefs">Submit</button>
+      <p>Your Favourite Sport: {{ output }}</p>
+    
+    </div>
+    </div>
+  </div>
+  <script>
+    const appObject = {
+      data() {
+        return {
+          output: "Football"
+        }
+      },
+      methods: {
+        readRefs:function() {
+          console.log(this.$refs.input.value)
+          this.output = this.$refs.input.value
+        }
+      }
+    }
+   Vue.createApp(appObject).mount("#app")
+  </script>
+  </body>
+</html>
