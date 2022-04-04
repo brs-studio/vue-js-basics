@@ -1,2 +1,9 @@
-# vue.js-basics
-Vue basics is a series of apps built to demonstrate the basic features &amp; components of this most popular JavaScript framework.
+# shopping-list-app-vue this is the app for vue basics. 
+
+Technologies :
+
+1. HTML
+2. CSS
+3. Vue
+
+Netlify Link : https://crud-vue-shopping-list.netlify.app/
