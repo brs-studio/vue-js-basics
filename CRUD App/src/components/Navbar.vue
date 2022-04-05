@@ -1,3 +1,10 @@
+/** 
+     Author:    Build Rise Shine with Nyros (BRS) 
+     Created:   11.05.2022 
+     Library / Component: Navbar component
+
+     (c) Copyright by BRS with Nyros. 
+**/
 <template>
   <nav>
     <v-app-bar>
