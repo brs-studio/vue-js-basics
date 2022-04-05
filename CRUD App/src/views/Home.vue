@@ -1,3 +1,11 @@
+/** 
+     Author:    Build Rise Shine with Nyros (BRS) 
+     Created:   11.05.2022 
+     Library / Component: Home Page
+
+     (c) Copyright by BRS with Nyros. 
+**/
+
 <template>
 <div class="home mt-5" >
   <v-container v-if="loading" class="progress">
