@@ -1,3 +1,10 @@
+/** 
+     Author:    Build Rise Shine with Nyros (BRS) 
+     Created:   11.05.2022 
+     Description: File is used for connecting to the  server and mongodb
+     (c) Copyright by BRS with Nyros. 
+**/
+
 const express = require('express')
 const serveStatic = require('serve-static')
 const path = require('path')
